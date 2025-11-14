@@ -112,23 +112,62 @@ class _CrudScreenState extends State<CrudScreen> {
               key: _formKey,
               child: Column(
                 children: [
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: 'Title',
-                      border: OutlineInputBorder(),
-                    ),
-                    validator: (value) => value!.isEmpty ? 'Enter title' : null,
-                    onSaved: (value) => _title = value!,
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Title',
+                            border: OutlineInputBorder(),
+                          ),
+                          validator: (value) =>
+                              value!.isEmpty ? 'Enter title' : null,
+                          onSaved: (value) => _title = value!,
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Description',
+                            border: OutlineInputBorder(),
+                          ),
+                          validator: (value) =>
+                              value!.isEmpty ? 'Enter description' : null,
+                          onSaved: (value) => _description = value!,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 16),
-                  TextFormField(
-                    decoration: const InputDecoration(
-                      labelText: 'Description',
-                      border: OutlineInputBorder(),
-                    ),
-                    validator: (value) =>
-                        value!.isEmpty ? 'Enter description' : null,
-                    onSaved: (value) => _description = value!,
+                  Row(
+                    children: [
+                      Expanded(
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Field 3',
+                            border: OutlineInputBorder(),
+                          ),
+                          validator: (value) =>
+                              value!.isEmpty ? 'Enter field 3' : null,
+                          onSaved: (value) =>
+                              _title = value!, // Adjust as needed
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            labelText: 'Field 4',
+                            border: OutlineInputBorder(),
+                          ),
+                          validator: (value) =>
+                              value!.isEmpty ? 'Enter field 4' : null,
+                          onSaved: (value) =>
+                              _description = value!, // Adjust as needed
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 16),
                   ElevatedButton(
